@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /*************/
 function getIngredients(filtredRecipes, tagsItemIngredients) {
-  const ingredients = [] /*Tableau de l'ensembre des ingrédient*/
+  const ingredients = []
 
   for (let i = 0; i < filtredRecipes.length; i++) {
     for (let j = 0; j < filtredRecipes[i].ingredients.length; j++) {
@@ -13,21 +13,17 @@ function getIngredients(filtredRecipes, tagsItemIngredients) {
 }
 
 function getAppliances(filtredRecipes, tagsItemAppilances) {
-  const appliances = [] /*Tableau de l'ensembre des ingrédient*/
+  const appliances = []
   for (let i = 0; i < filtredRecipes.length; i++) {
     let recipeAppliance = filtredRecipes[i].appliance
     appliances.push(recipeAppliance.toLowerCase())
   }
-  /*
-  Object.keys(filtredRecipes).forEach((key) => {
-    let recipeAppliance = filtredRecipes[key].appliance
-    appliances.push(recipeAppliance.toLowerCase())
-  })*/
+
   return filterElementList(appliances, tagsItemAppilances)
 }
 
 function getUstensils(filtredRecipes, tagsItemUstenceils) {
-  let ustensils = [] /*Tableau de l'ensembre des ingrédient*/
+  let ustensils = []
 
   for (let i = 0; i < filtredRecipes.length; i++) {
     for (let j = 0; j < filtredRecipes[i].ustensils.length; j++) {
@@ -36,13 +32,6 @@ function getUstensils(filtredRecipes, tagsItemUstenceils) {
     }
   }
 
-  /*
-  filtredRecipes.forEach((recipe) =>
-    recipe.ustensils.forEach((ustensil) =>
-      ustensils.push(ustensil.toLowerCase())
-    )
-  )
-  */
   return filterElementList(ustensils, tagsItemUstenceils)
 }
 
