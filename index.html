@@ -19,7 +19,7 @@
 
     <body>
         <div class="container-fluid">
-            <header class="container-fluid px-0 pb-3" role="banner"> 
+            <header class="container-fluid px-3 pb-3" role="banner"> 
                 <div class="col headerPage">
                     <img class="d-block mx-auto"src="assets/logo.svg" alt="logo du site Les Petits Plats - Page d’accueil"  />
                     <h1 class="text-center">Les Petits Plats</h1>
@@ -33,23 +33,23 @@
                     ></span>
                 </div>
 
-                <div id="tags" data-wrapper="tags">
+                <div id="tags" >
                     <ul class="m-0 p-0 d-flex flex-row flex-wrap" id="tags__list">
                         
                 </div>
                 <div id="filters" class="py-2 container-fluid">  
-                    <div class="row flex-nowrap align-items-start w-100" data-wrapper="filters">
-                        <div class="filter bg-primary rounded p-0 me-3 col-auto" data-label="Ingrédients" data-placeholder="Rechercher un ingrédient" tabindex="0" aria-label="Rechercher un ingrédient" aria-expanded="true" role="listbox">
+                    <div class="row flex-nowrap align-items-start w-100">
+                        <div class="filter bg-primary rounded p-0 me-3 col-auto" tabindex="0" aria-label="Rechercher un ingrédient" aria-expanded="true" role="listbox">
                             <input tabindex="-1" class="text-white filter__input form-control border-0 btn btn-primary  py-3 px-4" type="text" name="ingredients" aria-label="Ingrédients" id="ingredients" placeholder="Ingrédients">
                             <ul class="row filter__result flex-wrap m-0 p-3 pt-0 list-unstyled text-white fs-6" role="listbox" tabindex="-1"></ul>
                         </div>
 
-                        <div class="filter bg-success rounded p-0 me-3 col-auto" data-label="Appareils" data-placeholder="Rechercher un appareil" tabindex="0" aria-label="Rechercher un appareil" aria-expanded="false" role="listbox">
+                        <div class="filter bg-success rounded p-0 me-3 col-auto" tabindex="0" aria-label="Rechercher un appareil" aria-expanded="false" role="listbox">
                             <input tabindex="-1" class="filter__input form-control btn border-0 btn-success text-white py-3 px-4" type="text" name="appareils" aria-label="Appareils" id="appareils" placeholder="Appareils">
                             <ul class="row filter__result flex-wrap m-0 p-3 pt-0 list-unstyled text-white fs-6" role="listbox" tabindex="-1"></ul>
                         </div>
 
-                        <div class="filter bg-danger rounded p-0 me-3 col-auto" data-label="Ustensiles" data-placeholder="Rechercher un ustensile" tabindex="0" aria-label="Rechercher un ustensile" aria-expanded="false" role="listbox">
+                        <div class="filter bg-danger rounded p-0 me-3 col-auto" tabindex="0" aria-label="Rechercher un ustensile" aria-expanded="false" role="listbox">
                             <input tabindex="-1" class="filter__input form-control border-0 btn btn-danger text-white py-3 px-4" type="text" name="ustensiles" aria-label="Ustensiles" id="ustensiles" placeholder="Ustensiles">
                             <ul class="row filter__result flex-wrap m-0 p-3 pt-0 list-unstyled text-white fs-6" role="listbox" tabindex="-1"></ul>
                         </div>
@@ -59,7 +59,7 @@
 
             </header>
             
-            <section id="cardSection" class="row row-cols-1 row-cols-md-3 g-4 AllCards"> 
+            <section id="cardSection" class="row row-cols-1 row-cols-md-3 g-4 px-3 "> 
                 
             </section>
             <p id="noResult" class="m-4 text-secondary">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>
