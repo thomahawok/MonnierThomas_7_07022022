@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-
+/*************/
 function getIngredients(filtredRecipes, tagsItemIngredients) {
   console.log(tagsItemIngredients)
   const ingredients = [] /*Tableau de l'ensembre des ingrédient*/
@@ -7,7 +7,7 @@ function getIngredients(filtredRecipes, tagsItemIngredients) {
     let recipeIng = filtredRecipes[key].ingredients
     Object.keys(recipeIng).forEach((key) => {
       let recipeIngIng = recipeIng[key].ingredient
-      ingredients.push(recipeIngIng.toLowerCase())
+      ingredients.(recipeIngIng.toLowerCase())
     })
   })
 
@@ -51,7 +51,6 @@ function onlyUniqueInliste(value, index, self) {
 
 function filterListeAndTags(filteredElement, anyArrayTags) {
   let symetricDifference = []
-  console.log(anyArrayTags)
   symetricDifference = [
     ...anyArrayTags.filter((v) => !filteredElement.includes(v)),
     ...filteredElement.filter((f) => !anyArrayTags.includes(f)),
