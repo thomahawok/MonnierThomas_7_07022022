@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 
 function getIngredients(filtredRecipes, tagsItemIngredients) {
-  console.log(tagsItemIngredients)
-  const ingredients = [] /*Tableau de l'ensembre des ingrédient*/
+  const ingredients = []
+  console.time('timer ForEach')
   Object.keys(filtredRecipes).forEach((key) => {
     let recipeIng = filtredRecipes[key].ingredients
     Object.keys(recipeIng).forEach((key) => {
@@ -10,12 +10,13 @@ function getIngredients(filtredRecipes, tagsItemIngredients) {
       ingredients.push(recipeIngIng.toLowerCase())
     })
   })
-
+  console.timeEnd('timer ForEach')
+  console.timeLog('timer ForEach')
   return filterElementList(ingredients, tagsItemIngredients)
 }
 
 function getAppliances(filtredRecipes, tagsItemAppilances) {
-  const appliances = [] /*Tableau de l'ensembre des ingrédient*/
+  const appliances = []
   Object.keys(filtredRecipes).forEach((key) => {
     let recipeAppliance = filtredRecipes[key].appliance
     appliances.push(recipeAppliance.toLowerCase())
@@ -24,8 +25,7 @@ function getAppliances(filtredRecipes, tagsItemAppilances) {
 }
 
 function getUstensils(filtredRecipes, tagsItemUstenceils) {
-  let ustensils = [] /*Tableau de l'ensembre des ingrédient*/
-
+  let ustensils = []
   filtredRecipes.forEach((recipe) =>
     recipe.ustensils.forEach((ustensil) =>
       ustensils.push(ustensil.toLowerCase())
