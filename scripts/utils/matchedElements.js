@@ -1,11 +1,12 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 function matchContent(request, filtredRecipes) {
+  console.log(request)
   console.log(filtredRecipes)
   matchedContents = []
   let recipesMatched = filtredRecipes.filter((recipe) => {
     return (
-      recipe.name.toLowerCase().startsWith(request) ||
+      recipe.name.toLowerCase().includes(request) ||
       recipe.description.toLowerCase().includes(request) ||
       recipe.ingredients.some((ingredient) =>
         ingredient.ingredient.toLowerCase().includes(request)
@@ -15,12 +16,14 @@ function matchContent(request, filtredRecipes) {
       )
     )
   })
-
+  console.log(recipesMatched)
   return recipesMatched
 }
 
 function matchedGolbal(request, recipes) {
   console.log(request)
+
+  matchedIngredients = []
   let matchedIngredientsTag = recipes.filter((recipe) => {
     return recipe.ingredients.some((ingredient) =>
       ingredient.ingredient.toLowerCase().includes(request)
@@ -43,8 +46,8 @@ function matchedGolbal(request, recipes) {
     matchedIngredientsTag.concat(matchedAppilancesTag)
   const recipesMatched = IngredeintApplianceConcnat.concat(matchedUstensilsTag)
   const filteredElements = recipesMatched.filter(onlyUniqueInliste)
-  console.log(filteredElements)
+  //console.log(filteredElements)
   ArrrayFiltredElements = [...filteredElements]
-  console.log()
+  //console.log(ArrrayFiltredElements)
   return filteredElements
 }

@@ -11155,12 +11155,12 @@ textarea.form-control-lg {
 }
 
 /* filer buttons*/
+/*
 .filter {
   color: white;
 }
-
 .filter::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 50px;
   width: 50px;
@@ -11170,7 +11170,7 @@ textarea.form-control-lg {
   background: url(../assets/arrow.svg) no-repeat center;
   transition: transform 0.3s ease-in-out;
 }
-
+*/
 /* drop down menu */
 /*
 .dropDown {
@@ -11251,6 +11251,7 @@ textarea.form-control-lg {
 
 .filter {
   position: relative;
+  z-index: 900;
   flex: 0 1 190px;
   min-width: 56px;
   max-width: 40%;
@@ -11270,6 +11271,7 @@ textarea.form-control-lg {
   right: 0;
   background: url("../assets/arrow.svg") no-repeat center;
   transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 .filter__input {
   pointer-events: none;
@@ -11301,6 +11303,7 @@ textarea.form-control-lg {
 .filter--active {
   flex: 1 1 50%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /*position: absolute;*/
 }
 .filter--active:hover {
   opacity: 1;
@@ -11308,9 +11311,9 @@ textarea.form-control-lg {
 .filter--active .filter__result {
   opacity: 1;
   display: flex;
-  max-height: 250px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  max-height: 340px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .filter--active .filter__item:focus-visible {
   text-decoration: underline;

@@ -47,6 +47,7 @@ class Main {
         displayTag(e, ulElementDomTag)
         dropDown(divButton, inputPlaceHoder)
         getTags(clickedElement)
+        manageTagsAndSearchBar()
         ArrayListElements = []
       })
     })
@@ -57,8 +58,8 @@ class Main {
       e.path[0].remove()
       const searchBarValue = e.path[3].children[0].children[2].children[0].value
       const elementsInUl = e.path[1].children
-      console.log(e.path[1].children)
 
+      //getTags()
       manageTagsAndSearchBar(searchBarValue, elementsInUl)
     })
 
@@ -79,7 +80,7 @@ class Main {
           e,
           arrayElementsListDropDown
         )
-        console.log(newIngredeintList)
+
         displayElementsList(newIngredeintList, button)
       })
     })

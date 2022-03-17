@@ -5,6 +5,7 @@
  * @param {string} element
  */
 function displayTag(e, parentToDisplay) {
+  recipeMatchedTags = []
   const ilListIng = document.createElement('li')
   if (e.path[2].classList[1] == 'bg-primary') {
     ilListIng.setAttribute(
@@ -57,10 +58,14 @@ function getTags(clickedElement) {
     'li[data-category="ustensils"]'
   )
   const ArrayTags = []
+  ArrayTagsItemIngredients = []
+  ArrayTagsItemAppilances = []
+  ArrayTagsItemUstenceils = []
+  recipeMatchedTags = []
 
   const recipesUses = recipes
   matchedGolbal(clickedElement, recipesUses)
-
+  filtredRecipes = matchedGolbal(clickedElement, recipesUses)
   tagsItem.forEach((tag) => {
     ArrayTags.push(tag.innerText)
   })
@@ -84,14 +89,24 @@ function getTags(clickedElement) {
     ArrayTagsItemAppilances,
     ArrayTagsItemUstenceils
   )
+
   displayRecipes(recipeMatchedTags)
+  //manageTagsAndSearchBar()
 }
 
-function manageTagsAndSearchBar(searchBarValue, elementsInUl) {
+function manageTagsAndSearchBar() {
+  let searchBarValue = document.querySelector('#search-input').value
+
+  //console.log(valueInputSearchBar)
+
+  let elementsInUl = document.querySelectorAll('#tags ul li')
+  //console.log(displayedTag)
+  console.log(elementsInUl)
   const elementsTags = []
   if (elementsInUl.length == 0 && searchBarValue.length > 2) {
     removeArticles()
     matchedContents = matchContent(searchBarValue, recipes)
+
     if (matchedContents.length == 0) {
       document.querySelector('#noResult').style.display = 'block'
     } else {
@@ -109,6 +124,7 @@ function manageTagsAndSearchBar(searchBarValue, elementsInUl) {
     displayElementsList(getUstensils(recipes), buttonUstensils)
   } else if (elementsInUl.length !== 0 && searchBarValue.length > 2) {
     removeArticles()
+
     matchedContents = matchContent(searchBarValue, recipeMatchedTags)
     console.log(filtredRecipes)
     console.log(matchedContents)
@@ -117,17 +133,20 @@ function manageTagsAndSearchBar(searchBarValue, elementsInUl) {
     } else {
       document.querySelector('#noResult').style.display = 'none'
       displayRecipes(matchedContents)
+
       displayElementsList(getIngredients(matchedContents), buttonIngretients)
       displayElementsList(getAppliances(matchedContents), buttonAppliances)
       displayElementsList(getUstensils(matchedContents), buttonUstensils)
     }
   } else if (elementsInUl.length !== 0 && searchBarValue.length < 2) {
+    removeArticles()
     document.querySelector('#noResult').style.display = 'none'
     for (let a = 0; a < elementsInUl.length; a++) {
       elementsTags.push(elementsInUl[a].innerText)
     }
-    removeArticles()
-    elementsTags.forEach((tag) => getTags(tag))
+    elementsTags.forEach((tag) => console.log(getTags(tag)))
+    console.log(recipeMatchedTags)
+    //displayRecipes(recipeMatchedTags)
   } else {
     return false
   }
